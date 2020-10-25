@@ -1,3 +1,7 @@
+This Project is hosted at: https://covid19-tracker-3e88d.web.app/
+
+Inspired by: https://www.youtube.com/watch?v=cF3pIMJUZxM&t=10668s
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
