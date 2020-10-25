@@ -1,0 +1,49 @@
+.Infobox {
+  flex: 1;
+}
+
+.Infobox:not(:last-child) {
+  margin-right: 1rem;
+}
+
+.Infobox-border-top {
+  height: 10px;
+}
+
+.Infobox.active[casestype="cases"] .Infobox-border-top {
+  background-color: #cc1034;
+}
+
+.Infobox.active[casestype="recovered"] .Infobox-border-top {
+  background-color: #7dd71d;
+}
+
+.Infobox.active[casestype="deaths"] .Infobox-border-top {
+  background-color: #fb4443;
+}
+
+.Infobox h2.MuiTypography-root {
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.Infobox p.MuiTypography-body2 {
+  color: #cc1034;
+  font-weight: 600;
+  font-size: 1.5rem;
+}
+
+.Infobox[casestype="recovered"] p.MuiTypography-body2 {
+  color: #7dd71d;
+}
+
+.Infobox[casestype="deaths"] p.MuiTypography-body2 {
+  color: #fb4443;
+}
+
+.Infobox p.MuiTypography-body1 {
+  color: #6c757d;
+  font-weight: 700;
+  font-size: 0.8rem;
+  padding-top: 1rem;
+}
