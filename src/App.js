@@ -58,14 +58,15 @@ function App() {
   }, []);
 
   //Update the selected country's value
-  const updateSelectedCountry = async (event) => {
-    const countryCode = (event.target.firstElementChild || {getAttribute: () => ""}).getAttribute("value");
+  const updateSelectedCountry = async (event, val) => {
+    const countryCode = val.value;
+    console.log(countryCode);
+    
     //Retrieve the stats for the selected country.
     const URL = countryCode ? INDIVIDUAL_COUNTRY_STATS_URL + countryCode : ALL_COUNTRIES_STATS_URL;
     await fetch(URL)
           .then(res => res.json())
           .then(data => {
-            console.log(data);
             setSelectedCountryStats(data);
             setMapCenter([((data.countryInfo || {}).lat) || 0, ((data.countryInfo || {}).long) || 0]);
             mapZoom.current = 5;
@@ -125,7 +126,7 @@ function App() {
                 <h3>COVID19 TRACKER</h3>
               </div>
               <Autocomplete
-                id="combo-box-demo"
+                id="combo-box-demo-1"
                 options={countries}
                 getOptionLabel={(country) => country.name}
                 onChange={updateSelectedCountry}
